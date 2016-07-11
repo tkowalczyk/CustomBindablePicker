@@ -5,7 +5,9 @@
 	public class CustomViewModel
 	{
 		public IList<CustomObject> ObjectList { get; set; }
-		public CustomObject SelectedItem { get; set; }
+
+		public string SelectedValue { get; set; }
+
 		public CustomObject StaticSelectedItem { get; set; }
 
 		public CustomViewModel()
@@ -38,7 +40,8 @@
 				}
 			};
 
-			StaticSelectedItem = new CustomObject { Key = 1, Abbreviation = "o", Value = "one" };
+			this.StaticSelectedItem = ObjectList[1];
+			this.SelectedValue = "tw";
 		}
 	}
 }

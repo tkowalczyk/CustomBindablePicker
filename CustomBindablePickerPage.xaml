@@ -25,15 +25,13 @@
 				DisplayMemberPath="Value"
 				SelectedValuePath="Abbreviation"			
                 ItemsSource="{Binding ObjectList}"
-                SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+                SelectedValue="{Binding Path=SelectedValue, Mode=TwoWay}" />
 
 		<Label Text="Load from vm:" />
 
 		<controls:BindablePicker	
-				DisplayMemberPath="Value"
-                SelectedValuePath="Abbreviation"
                 ItemsSource="{Binding Path=ObjectList}"
-                SelectedValue="{Binding Path=StaticSelectedItem.Value, Mode=TwoWay}" />
+                SelectedItem="{Binding Path=StaticSelectedItem, Mode=TwoWay}" />
 		
 	</StackLayout>
 		
