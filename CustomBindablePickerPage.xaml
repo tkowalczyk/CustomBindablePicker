@@ -1,4 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CustomBindablePicker" x:Class="CustomBindablePicker.CustomBindablePickerPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:CustomBindablePicker" 
+		xmlns:controls="clr-namespace:CustomBindablePicker.Controls;assembly=CustomBindablePicker"
+		x:Class="CustomBindablePicker.CustomBindablePickerPage">
+
+	<ContentPage.Padding>
+        <OnPlatform 
+            x:TypeArguments="Thickness" 
+            iOS="5,20,5,5" 
+            Android="5,0,5,5" 
+            WinPhone="5,0,5,5" />
+    </ContentPage.Padding>
+
+	<ContentPage.Content>
+
+		<StackLayout
+			HorizontalOptions="Center">
+
+		<Label Text="Binding items source:" />
+
+		<controls:BindablePicker	
+				Title="Picker 1"
+				DisplayMemberPath="Value"
+				SelectedValuePath="Abbreviation"			
+                ItemsSource="{Binding ObjectList}"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+
+		<Label Text="Load from vm:" />
+
+		<controls:BindablePicker	
+				Title="Picker 2"			
+                ItemsSource="{Binding Path=ObjectList}"
+                SelectedItem="{Binding Path=StaticSelectedItem, Mode=TwoWay}" />
+		
+	</StackLayout>
+		
+	</ContentPage.Content>
+
 </ContentPage>
