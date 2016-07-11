@@ -1,14 +1,12 @@
 ﻿namespace CustomBindablePicker
 {
 	using System.Collections.Generic;
-	using System.Linq;
 
 	public class CustomViewModel
 	{
 		public IList<CustomObject> ObjectList { get; set; }
 		public CustomObject SelectedItem { get; set; }
 		public CustomObject StaticSelectedItem { get; set; }
-
 
 		public CustomViewModel()
 		{

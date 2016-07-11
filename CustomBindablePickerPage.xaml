@@ -30,9 +30,10 @@
 		<Label Text="Load from vm:" />
 
 		<controls:BindablePicker	
-				Title="Picker 2"			
+				DisplayMemberPath="Value"
+                SelectedValuePath="Abbreviation"
                 ItemsSource="{Binding Path=ObjectList}"
-                SelectedItem="{Binding Path=StaticSelectedItem, Mode=TwoWay}" />
+                SelectedValue="{Binding Path=StaticSelectedItem.Value, Mode=TwoWay}" />
 		
 	</StackLayout>
 		

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using UIKit;
+﻿using UIKit;
 
 namespace CustomBindablePicker.iOS
 {
@@ -18,4 +13,3 @@ namespace CustomBindablePicker.iOS
 		}
 	}
 }
-
